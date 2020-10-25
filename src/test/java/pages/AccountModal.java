@@ -2,6 +2,7 @@ package pages;
 
 import elements.DropDown;
 import elements.Input;
+import elements.TextArea;
 import models.Account;
 import org.openqa.selenium.By;
 import org.openqa.selenium.TimeoutException;
@@ -22,6 +23,8 @@ public class AccountModal extends ModalBasePage {
         new Input(driver, "Account Name").write(account.getAccountName());
         new Input(driver, "Website").write(account.getWebSite());
         new DropDown(driver, "Type").select(account.getType());
+        new TextArea(driver, "Description").write(account.getDescription());
+        new TextArea(driver, "Billing Street").write(account.getBillingStreet());
         return this;
     }
 

@@ -5,6 +5,8 @@ public class Account {
     private String accountName;
     private String webSite;
     private String type;
+    private String description;
+    private String billingStreet;
 
     private Account() {
         // private constructor
@@ -38,6 +40,22 @@ public class Account {
         this.type = type;
     }
 
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getBillingStreet() {
+        return billingStreet;
+    }
+
+    public void setBillingStreet(String billingStreet) {
+        this.billingStreet = billingStreet;
+    }
+
     public class Builder {
 
         private Builder() {
@@ -56,6 +74,16 @@ public class Account {
 
         public Builder setType(String type) {
             Account.this.type = type;
+            return this;
+        }
+
+        public Builder setDescription(String description) {
+            Account.this.description = description;
+            return this;
+        }
+
+        public Builder setBillingStreet(String billingStreet) {
+            Account.this.billingStreet = billingStreet;
             return this;
         }
 

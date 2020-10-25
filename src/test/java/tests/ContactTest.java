@@ -19,6 +19,8 @@ public class ContactTest extends BaseTest {
             .setAccountName("Mikhail")
             .setWebSite("tut.by")
             .setType("Analyst")
+            .setDescription("Description")
+            .setBillingStreet("Billing Street")
             .build();
 
     @Test
