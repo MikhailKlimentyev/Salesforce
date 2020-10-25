@@ -22,9 +22,22 @@ public class AccountModal extends ModalBasePage {
     public AccountModal enterNewAccountFields(Account account) {
         new Input(driver, "Account Name").write(account.getAccountName());
         new Input(driver, "Website").write(account.getWebSite());
+        new Input(driver, "Parent Account").write(account.getParentAccount());
+        new Input(driver, "Phone").write(account.getPhone());
+        new Input(driver, "Employees").write(String.valueOf(account.getEmployees()));
+        new Input(driver, "Billing City").write(account.getBillingCity());
+        new Input(driver, "Billing State/Province").write(account.getBillingStateProvince());
+        new Input(driver, "Billing Zip/Postal Code").write(account.getBillingZipPostalCode());
+        new Input(driver, "Billing Country").write(account.getBillingCountry());
+        new Input(driver, "Shipping City").write(account.getShippingCity());
+        new Input(driver, "Shipping State/Province").write(account.getShippingStateProvince());
+        new Input(driver, "Shipping Zip/Postal Code").write(account.getBillingZipPostalCode());
+        new Input(driver, "Shipping Country").write(account.getShippingCountry());
         new DropDown(driver, "Type").select(account.getType());
+        new DropDown(driver, "Industry").select(account.getIndustry());
         new TextArea(driver, "Description").write(account.getDescription());
         new TextArea(driver, "Billing Street").write(account.getBillingStreet());
+        new TextArea(driver, "Shipping Street").write(account.getShippingStreet());
         return this;
     }
 

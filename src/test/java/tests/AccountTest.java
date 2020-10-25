@@ -10,7 +10,7 @@ import steps.AccountSteps;
         3. Заполнить все поля при создании КОНТАКТА
         4. Отрефакторить проект под корректный PageObject и другие паттерны по желанию (BaseTest и ожидания)
  */
-public class ContactTest extends BaseTest {
+public class AccountTest extends BaseTest {
 
     private static final String USERNAME = "*****";
     private static final String PASSWORD = "*****";
@@ -18,13 +18,26 @@ public class ContactTest extends BaseTest {
     private Account account = Account.newBuilder()
             .setAccountName("Mikhail")
             .setWebSite("tut.by")
+            .setParentAccount("Some parent account")
+            .setPhone("Some phone")
+            .setEmployees(5)
+            .setBillingCity("Some billing city")
+            .setBillingStateProvince("Some Billing State/Province")
+            .setBillingZipPostalCode("Some Billing Zip/Postal Code")
+            .setBillingCountry("Some Billing Country")
+            .setShippingCity("Some Shipping City")
+            .setShippingStateProvince("Some Shipping State/Province")
+            .setShippingZipPostalCode("Some Shipping Zip/Postal Code")
+            .setShippingCountry("Some Shipping Country")
             .setType("Analyst")
-            .setDescription("Description")
-            .setBillingStreet("Billing Street")
+            .setDescription("Some description")
+            .setBillingStreet("Some Billing Street")
+            .setIndustry("Technology")
+            .setShippingStreet("Some Shipping Street")
             .build();
 
     @Test
-    public void createContact() {
+    public void createAccount() {
         loginSteps
                 .login(USERNAME, PASSWORD);
         AccountSteps accountSteps = accountsSteps
