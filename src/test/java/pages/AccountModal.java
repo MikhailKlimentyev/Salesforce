@@ -10,6 +10,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import pages.base.ModalBasePage;
+import utils.AllureUtils;
 
 public class AccountModal extends ModalBasePage {
 
@@ -38,11 +39,13 @@ public class AccountModal extends ModalBasePage {
         new TextArea(driver, "Description").write(account.getDescription());
         new TextArea(driver, "Billing Street").write(account.getBillingStreet());
         new TextArea(driver, "Shipping Street").write(account.getShippingStreet());
+        AllureUtils.takeScreenshot(driver);
         return this;
     }
 
     public AccountsPage clickSave() {
         driver.findElement(SAVE_BUTTON_LOCATOR).click();
+        AllureUtils.takeScreenshot(driver);
         return new AccountsPage(driver);
     }
 

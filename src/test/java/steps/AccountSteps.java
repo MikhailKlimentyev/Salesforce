@@ -1,5 +1,6 @@
 package steps;
 
+import io.qameta.allure.Step;
 import models.Account;
 import pages.AccountModal;
 import pages.AccountsPage;
@@ -14,6 +15,7 @@ public class AccountSteps {
         this.accountsPage = accountsPage;
     }
 
+    @Step("Create new account {account}")
     public AccountsSteps createNewAccount(Account account) {
         accountModal
                 .enterNewAccountFields(account)

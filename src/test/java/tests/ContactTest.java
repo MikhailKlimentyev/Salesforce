@@ -36,6 +36,6 @@ public class ContactTest extends BaseTest {
                 .openPage()
                 .openNewContactModal();
         contactSteps.
-                createNewAccount(contact);
+                createNewContact(contact);
     }
 }

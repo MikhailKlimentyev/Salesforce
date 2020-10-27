@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import pages.base.BasePage;
+import utils.AllureUtils;
 
 public class ContactsPage extends BasePage {
 
@@ -20,6 +21,7 @@ public class ContactsPage extends BasePage {
 
     public ContactModal clickNew() {
         driver.findElement(NEW_BUTTON_LOCATOR).click();
+        AllureUtils.takeScreenshot(driver);
         return new ContactModal(driver);
     }
 
@@ -37,6 +39,7 @@ public class ContactsPage extends BasePage {
     @Override
     public ContactsPage openPage() {
         driver.get(URL);
+        AllureUtils.takeScreenshot(driver);
         return this;
     }
 }

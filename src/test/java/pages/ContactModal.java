@@ -11,6 +11,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import pages.base.ModalBasePage;
+import utils.AllureUtils;
 
 public class ContactModal extends ModalBasePage {
 
@@ -39,11 +40,13 @@ public class ContactModal extends ModalBasePage {
         new Input(driver, "Mailing Zip/Postal Code").write(contact.getMailingZipPostalCode());
         new Input(driver, "Mailing Country").write(contact.getMailingCountry());
         new ComboBox(driver, "Account Name").writeSelect(contact.getAccountName());
+        AllureUtils.takeScreenshot(driver);
         return this;
     }
 
     public ContactsPage clickSave() {
         driver.findElement(SAVE_BUTTON_LOCATOR).click();
+        AllureUtils.takeScreenshot(driver);
         return new ContactsPage(driver);
     }
 

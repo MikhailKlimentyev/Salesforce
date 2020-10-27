@@ -1,5 +1,6 @@
 package steps;
 
+import io.qameta.allure.Step;
 import pages.LoginPage;
 
 public class LoginSteps {
@@ -10,12 +11,11 @@ public class LoginSteps {
         this.loginPage = loginPage;
     }
 
+    @Step("Login with {username} and {password}")
     public void login(String username, String password) {
         loginPage
                 .openPage()
                 .isPageOpened()
-                .enterUsername(username)
-                .enterPassword(password)
-                .clickOnLoginButton();
+                .login(username, password);
     }
 }

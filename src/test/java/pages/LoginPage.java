@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import pages.base.BasePage;
+import utils.AllureUtils;
 
 public class LoginPage extends BasePage {
 
@@ -19,18 +20,11 @@ public class LoginPage extends BasePage {
         super(driver);
     }
 
-    public LoginPage enterUsername(String userName) {
+    public LoginPage login(String userName, String password) {
         driver.findElement(USERNAME_INPUT_LOCATOR).sendKeys(userName);
-        return this;
-    }
-
-    public LoginPage enterPassword(String password) {
         driver.findElement(PASSWORD_INPUT_LOCATOR).sendKeys(password);
-        return this;
-    }
-
-    public LoginPage clickOnLoginButton() {
         driver.findElement(LOGIN_BUTTON_LOCATOR).click();
+        AllureUtils.takeScreenshot(driver);
         return this;
     }
 
@@ -48,6 +42,7 @@ public class LoginPage extends BasePage {
     @Override
     public LoginPage openPage() {
         driver.get(URL);
+        AllureUtils.takeScreenshot(driver);
         return this;
     }
 }

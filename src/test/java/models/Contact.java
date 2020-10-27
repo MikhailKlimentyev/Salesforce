@@ -173,6 +173,31 @@ public class Contact {
         this.salutation = salutation;
     }
 
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("Contact{");
+        sb.append("salutation='").append(salutation).append('\'');
+        sb.append(", mailingStreet='").append(mailingStreet).append('\'');
+        sb.append(", firstName='").append(firstName).append('\'');
+        sb.append(", middleName='").append(middleName).append('\'');
+        sb.append(", lastName='").append(lastName).append('\'');
+        sb.append(", suffix='").append(suffix).append('\'');
+        sb.append(", accountName='").append(accountName).append('\'');
+        sb.append(", reportsTo='").append(reportsTo).append('\'');
+        sb.append(", title='").append(title).append('\'');
+        sb.append(", email='").append(email).append('\'');
+        sb.append(", phone='").append(phone).append('\'');
+        sb.append(", mobile='").append(mobile).append('\'');
+        sb.append(", department='").append(department).append('\'');
+        sb.append(", fax='").append(fax).append('\'');
+        sb.append(", mailingCity='").append(mailingCity).append('\'');
+        sb.append(", mailingStateProvince='").append(mailingStateProvince).append('\'');
+        sb.append(", mailingZipPostalCode='").append(mailingZipPostalCode).append('\'');
+        sb.append(", mailingCountry='").append(mailingCountry).append('\'');
+        sb.append('}');
+        return sb.toString();
+    }
+
     public class Builder {
 
         private Builder() {

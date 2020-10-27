@@ -1,5 +1,6 @@
 package steps;
 
+import io.qameta.allure.Step;
 import models.Contact;
 import pages.ContactModal;
 import pages.ContactsPage;
@@ -14,7 +15,8 @@ public class ContactSteps {
         this.contactsPage = contactsPage;
     }
 
-    public ContactsSteps createNewAccount(Contact contact) {
+    @Step("Create new contact {contact}")
+    public ContactsSteps createNewContact(Contact contact) {
         contactModal
                 .enterNewContactFields(contact)
                 .clickSave();

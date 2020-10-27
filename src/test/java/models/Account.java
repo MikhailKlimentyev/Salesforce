@@ -173,6 +173,31 @@ public class Account {
         this.billingStreet = billingStreet;
     }
 
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("Account{");
+        sb.append("accountName='").append(accountName).append('\'');
+        sb.append(", webSite='").append(webSite).append('\'');
+        sb.append(", type='").append(type).append('\'');
+        sb.append(", description='").append(description).append('\'');
+        sb.append(", billingStreet='").append(billingStreet).append('\'');
+        sb.append(", parentAccount='").append(parentAccount).append('\'');
+        sb.append(", phone='").append(phone).append('\'');
+        sb.append(", employees=").append(employees);
+        sb.append(", billingCity='").append(billingCity).append('\'');
+        sb.append(", billingStateProvince='").append(billingStateProvince).append('\'');
+        sb.append(", billingZipPostalCode='").append(billingZipPostalCode).append('\'');
+        sb.append(", billingCountry='").append(billingCountry).append('\'');
+        sb.append(", shippingCity='").append(shippingCity).append('\'');
+        sb.append(", shippingStateProvince='").append(shippingStateProvince).append('\'');
+        sb.append(", shippingZipPostalCode='").append(shippingZipPostalCode).append('\'');
+        sb.append(", shippingCountry='").append(shippingCountry).append('\'');
+        sb.append(", industry='").append(industry).append('\'');
+        sb.append(", shippingStreet='").append(shippingStreet).append('\'');
+        sb.append('}');
+        return sb.toString();
+    }
+
     public class Builder {
 
         private Builder() {

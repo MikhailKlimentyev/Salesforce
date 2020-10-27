@@ -1,5 +1,6 @@
 package steps;
 
+import io.qameta.allure.Step;
 import pages.AccountModal;
 import pages.AccountsPage;
 
@@ -11,6 +12,7 @@ public class AccountsSteps {
         this.accountsPage = accountsPage;
     }
 
+    @Step("Open accounts page")
     public AccountsSteps openPage() {
         accountsPage
                 .openPage()
@@ -18,6 +20,7 @@ public class AccountsSteps {
         return this;
     }
 
+    @Step("Open new account modal")
     public AccountSteps openNewAccountModal() {
         AccountModal accountModal = accountsPage
                 .clickNew()
