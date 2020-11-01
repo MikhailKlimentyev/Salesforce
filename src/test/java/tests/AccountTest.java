@@ -30,7 +30,7 @@ public class AccountTest extends BaseTest {
     @Test
     public void createAccount() {
         loginSteps
-                .login(USERNAME, PASSWORD);
+                .login(getEnvOrReadProperty("User"), getEnvOrReadProperty("Pass"));
         AccountSteps accountSteps = accountsSteps
                 .openPage()
                 .openNewAccountModal();

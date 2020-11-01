@@ -14,14 +14,12 @@ import steps.AccountsSteps;
 import steps.ContactsSteps;
 import steps.LoginSteps;
 import tests.listeners.TestListener;
+import utils.PropertyReader;
 
 import java.util.concurrent.TimeUnit;
 
 @Listeners(TestListener.class)
 public class BaseTest {
-
-    protected static final String USERNAME = "*****";
-    protected static final String PASSWORD = "*****";
 
     protected WebDriver driver;
     protected LoginSteps loginSteps;
@@ -47,6 +45,10 @@ public class BaseTest {
         if (driver != null) {
             driver.quit();
         }
+    }
+
+    protected String getEnvOrReadProperty(String key) {
+        return System.getenv().getOrDefault(key, PropertyReader.getProperty(key));
     }
 
     private void setDriverAttribute(ITestContext context) {

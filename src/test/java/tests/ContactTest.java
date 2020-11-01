@@ -31,7 +31,7 @@ public class ContactTest extends BaseTest {
     @Test
     public void createContact() {
         loginSteps
-                .login(USERNAME, PASSWORD);
+                .login(getEnvOrReadProperty("User"), getEnvOrReadProperty("Pass"));
         ContactSteps contactSteps = contactsSteps
                 .openPage()
                 .openNewContactModal();
